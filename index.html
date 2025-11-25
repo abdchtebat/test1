@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Test du Comportement Professionnel</title>
+
+<style>
+    body {
+        font-family: "Tajawal", sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+        direction: rtl;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #ccc;
+    }
+    h2, h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .question {
+        background: #fafafa;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border-right: 4px solid #007bff;
+    }
+    button {
+        background: #007bff;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        font-size: 18px;
+    }
+    button:hover { background: #0056b3; }
+    #timer {
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: #d9534f;
+        margin-bottom: 20px;
+    }
+    #result {
+        margin-top: 25px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+    }
+    .hidden { display: none; }
+</style>
+
+</head>
+<body>
+
+<!-- -------------------------------------------------- -->
+<!-- ---------------------- WELCOME PAGE --------------- -->
+<!-- -------------------------------------------------- -->
+
+<div class="container" id="welcomePage">
+
+    <h2>Test du Comportement Professionnel</h2>
+
+    <p style="font-size:18px; text-align:center;">
+        Bienvenue dans le test de comportement professionnel.  
+        Ce test comporte 12 questions et dure seulement 3 minutes.  
+        À la fin, vous recevrez un <b>résumé de votre profil professionnel</b> basé sur vos réponses.
+    </p>
+
+    <button onclick="startTest()">Commencer le test</button>
+
+</div>
+
+<!-- -------------------------------------------------- -->
+<!-- ---------------------- TEST PAGE ------------------ -->
+<!-- -------------------------------------------------- -->
+
+<div class="container hidden" id="testPage">
+
+    <h2>Test du Comportement Professionnel</h2>
+    <h3>Durée du test : 3 minutes</h3>
+    <div id="timer">03:00</div>
+
+    <form id="quizForm">
+
+        <!-- QUESTIONS -->
+        <div class="question">
+            <p>1. ما العامل الأساسي لنجاح العمل عن بُعد؟</p>
+            <label><input type="radio" name="q1" value="0"> تنفيذ المهام فقط عند تلقي الأوامر</label><br>
+            <label><input type="radio" name="q1" value="1"> القدرة على تنظيم الوقت والتواصل المستمر مع الفريق</label><br>
+            <label><input type="radio" name="q1" value="0"> إنجاز العمل دون أي تفاعل مع الآخرين</label>
+        </div>
+
+        <div class="question">
+            <p>2. ما السلوك الأكثر ملاءمة في المكتب المفتوح؟</p>
+            <label><input type="radio" name="q2" value="0"> التحدث بصوت مسموع لضمان الانتباه</label><br>
+            <label><input type="radio" name="q2" value="1"> الالتزام بالهدوء واحترام المساحة الشخصية للزملاء</label><br>
+            <label><input type="radio" name="q2" value="0"> التركيز على العمل دون مراعاة وجود الآخرين</label>
+        </div>
+
+        <div class="question">
+            <p>3. ما التصرف الذي يضرّ بالعلاقة مع المدير؟</p>
+            <label><input type="radio" name="q3" value="0"> طلب التوضيحات عند الحاجة</label><br>
+            <label><input type="radio" name="q3" value="0"> تقديم تحديثات منتظمة حول التقدم</label><br>
+            <label><input type="radio" name="q3" value="1"> إخفاء الأخطاء أو تأجيل الإبلاغ عنها</label>
+        </div>
+
+        <div class="question">
+            <p>4. ما السلوك الذي يساعد على بناء علاقة مهنية إيجابية مع الزملاء؟</p>
+            <label><input type="radio" name="q4" value="0"> إنجاز المهام بشكل فردي دون مشاركة</label><br>
+            <label><input type="radio" name="q4" value="0"> مشاركة المعلومات في حدود الضرورة فقط</label><br>
+            <label><input type="radio" name="q4" value="1"> التعاون والإصغاء وتبادل الخبرات</label>
+        </div>
+
+        <div class="question">
+            <p>5. ما الأمر الذي يجب على القائد الجيد تجنّبه؟</p>
+            <label><input type="radio" name="q5" value="0"> توضيح الأهداف والمسؤوليات</label><br>
+            <label><input type="radio" name="q5" value="0"> تشجيع أعضاء الفريق على المبادرة</label><br>
+            <label><input type="radio" name="q5" value="1"> إظهار تفضيل واضح لبعض الموظفين</label>
+        </div>
+
+        <div class="question">
+            <p>6. ما الخطوة الأولى في حلّ المشكلات؟</p>
+            <label><input type="radio" name="q6" value="1"> تحديد المشكلة وفهم أسبابها بدقة</label><br>
+            <label><input type="radio" name="q6" value="0"> تجربة حل مبدئي لمعرفة النتيجة</label><br>
+            <label><input type="radio" name="q6" value="0"> تقييم الحلول قبل تحديد المشكلة</label>
+        </div>
+
+        <div class="question">
+            <p>7. ما الفائدة الأساسية لمهارة الاستماع النشط؟</p>
+            <label><input type="radio" name="q7" value="0"> تسريع الحوار دون التركيز</label><br>
+            <label><input type="radio" name="q7" value="0"> التحكم في النقاش عبر المقاطعة</label><br>
+            <label><input type="radio" name="q7" value="1"> تفادي سوء الفهم وتعزيز التواصل</label>
+        </div>
+
+        <div class="question">
+            <p>8. أي سلوك يعكس احتراماً فعلياً في التواصل؟</p>
+            <label><input type="radio" name="q8" value="0"> الإصغاء فقط عندما يكون الرأي مقنعاً</label><br>
+            <label><input type="radio" name="q8" value="1"> تقدير مختلف الآراء وإعطاء قيمة لمساهمة الجميع</label><br>
+            <label><input type="radio" name="q8" value="0"> الردّ بسرعة دون النظر للسياق</label>
+        </div>
+
+        <div class="question">
+            <p>9. ما العنصر الأكثر تأثيراً في نجاح التعاون؟</p>
+            <label><input type="radio" name="q9" value="0"> ترك توزيع المهام يتطور تلقائياً</label><br>
+            <label><input type="radio" name="q9" value="0"> مشاركة الأفكار عند الضرورة فقط</label><br>
+            <label><input type="radio" name="q9" value="1"> تحديد الأدوار والأهداف منذ البداية</label>
+        </div>
+
+        <div class="question">
+            <p>10. كيف تُبنى الثقة داخل العمل؟</p>
+            <label><input type="radio" name="q10" value="0"> الاحتفاظ بالمعلومات للتحكم</label><br>
+            <label><input type="radio" name="q10" value="1"> التعامل بوضوح واتساق مع الجميع</label><br>
+            <label><input type="radio" name="q10" value="0"> تغيير الأسلوب حسب الشخص</label>
+        </div>
+
+        <div class="question">
+            <p>11. ما أساس الاحتراف في التواصل اليومي؟</p>
+            <label><input type="radio" name="q11" value="1"> التحدث بنبرة هادئة مهما كانت الظروف</label><br>
+            <label><input type="radio" name="q11" value="0"> تجاهل الملاحظات</label><br>
+            <label><input type="radio" name="q11" value="0"> رفع الصوت عند الضغط</label>
+        </div>
+
+        <div class="question">
+            <p>12. ما أفضل توصيف للتميّز المهني؟</p>
+            <label><input type="radio" name="q12" value="0"> مهارة تُستخدم في مواقف معينة</label><br>
+            <label><input type="radio" name="q12" value="0"> خيار يمكن الاستغناء عنه</label><br>
+            <label><input type="radio" name="q12" value="1"> عادة يومية للتطوير المستمر</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">إنهاء الاختبار</button>
+
+    </form>
+
+    <p id="result"></p>
+
+</div>
+
+<!-- -------------------------------------------------- -->
+<!-- ---------------------- SUMMARY PAGE --------------- -->
+<!-- -------------------------------------------------- -->
+
+<div class="container hidden" id="summaryPage">
+
+    <h2>Résumé de votre Profil Professionnel</h2>
+
+    <p style="font-size:20px; text-align:center;" id="summaryText"></p>
+
+    <button onclick="restart()">Recommencer le test</button>
+
+</div>
+
+
+
+<script>
+/* ---------- START TEST PAGE ---------- */
+function startTest() {
+    document.getElementById("welcomePage").classList.add("hidden");
+    document.getElementById("testPage").classList.remove("hidden");
+    startTimer();
+}
+
+/* ---------- TIMER 3 MIN ---------- */
+let time = 180;
+let timer;
+
+function startTimer() {
+    timer = setInterval(function() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+
+        if (time <= 0) {
+            clearInterval(timer);
+            calculateScore();
+            document.getElementById("timer").innerHTML = "Temps écoulé";
+        }
+        time--;
+    }, 1000);
+}
+
+/* ---------- CALCULATE SCORE ---------- */
+function calculateScore() {
+    clearInterval(timer);
+
+    let score = 0;
+    const form = document.forms["quizForm"];
+
+    for (let i = 1; i <= 12; i++) {
+        const q = form["q"+i];
+        if (q && q.value == "1") score++;
+    }
+
+    let summary = "";
+
+    if (score >= 10) {
+        summary = "Excellent résultat ! Vous possédez un haut niveau de professionnalisme, une communication claire, un esprit de collaboration et une grande capacité à gérer les situations avec calme et efficacité.";
+    } 
+    else if (score >= 7) {
+        summary = "Bon résultat ! Vous avez de solides compétences professionnelles, même si certaines dimensions comme l’écoute active, la gestion du stress ou la collaboration peuvent encore être améliorées.";
+    } 
+    else if (score >= 4) {
+        summary = "Résultat moyen : Vous avez quelques bases professionnelles, mais vous avez besoin de développer davantage certaines compétences essentielles comme التواصل، التعاون واحترام قواعد العمل.";
+    } 
+    else {
+        summary = "Résultat faible : Vous avez besoin de développer davantage vos compétences professionnelles afin d’améliorer votre relation avec le travail، la communication et la collaboration avec vos collègues.";
+    }
+
+    document.getElementById("testPage").classList.add("hidden");
+    document.getElementById("summaryPage").classList.remove("hidden");
+    document.getElementById("summaryText").innerHTML = summary;
+}
+
+/* ---------- RESTART ---------- */
+function restart() {
+    location.reload();
+}
+</script>
+
+</body>
+</html>
